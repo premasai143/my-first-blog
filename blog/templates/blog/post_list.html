@@ -6,8 +6,14 @@
         <div>
             <h1><a href="/">Django Girls Blog</a></h1>
         </div>
-
-        <div>
+        {% for post in posts %}
+            <div>
+                <p>published: {{ post.published_date }}</p>
+                <h1><a href="">{{ post.title }}</a></h1>
+                <p>{{ post.text|linebreaksbr }}</p>
+            </div>
+        {% endfor %}  
+        <!-- <div>
             <p>published: 2018-09-18, 23:42:33</p>
             <h2><a href="">My first post</a></h2>
             <p>this post gives about amrita and its programmes</p>
@@ -17,6 +23,6 @@
             <p>published: 2018-09-18, 23:41:13</p>
             <h2><a href="">My second post</a></h2>
             <p>it explains about installation of django</p>
-        </div>
+        </div> -->
     </body>
 </html>
